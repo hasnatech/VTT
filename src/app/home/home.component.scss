@@ -1,0 +1,16 @@
+.form-input {
+  @apply border border-gray-300 rounded p-3 mb-1;
+  width: calc(100% - 2rem);
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.flex-1 {
+  flex: 1;
+  >:nth-child(even) {
+    background-color: #f3f4f5;
+  }
+}

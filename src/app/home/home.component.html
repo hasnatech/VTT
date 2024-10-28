@@ -1,0 +1,76 @@
+<header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="flex items-center justify-between px-6 py-4">
+        <h1 class="text-xl font-semibold">VTT File Editor</h1>
+        <div class="flex gap-3 notranslate">
+            <button class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700" (click)="Clear();">
+                Clear
+            </button>
+            <button class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700" (click)="Save();">
+                Save
+            </button>
+        </div>
+    </div>
+</header>
+
+<div>
+    <div>
+        <div class="flex gap-3" *ngIf="results && results.englishEntries">
+            <div class="flex-1 notranslate">
+                <h1>English</h1>
+                <div *ngFor="let item of results.englishEntries" class="mb-5 h-[280px]">
+                    <div>
+                        <div type="text" class="form-input">{{ item.id }}</div>
+                    </div>
+                    <div>
+                        <div type="text" class="form-input">{{ item.time }}</div>
+                    </div>
+                    <div>
+                        <div class="form-input h-28">{{ item.text }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 ">
+                <h1>English</h1>
+                <div *ngFor="let item of results.englishEntries" class="mb-5 h-[280px]">
+                    <div>
+                        <div type="text" class="form-input">{{ item.id }}</div>
+                    </div>
+                    <div>
+                        <div type="text" class="form-input">{{ item.time }}</div>
+                    </div>
+                    <div>
+                        <div class="form-input h-28">{{ item.text }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 notranslate hidden">
+                <h1>Spanish</h1>
+                <div *ngFor="let item of results.spanishEntries" class="mb-5 h-[280px]">
+                    <div>
+                        <div type="text" class="form-input">{{ item.id }}</div>
+                    </div>
+                    <div>
+                        <div type="text" class="form-input">{{ item.time }}</div>
+                    </div>
+                    <div>
+                        <div class="form-input h-28">{{ item.text }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 notranslate">
+                <h1>New Spanish</h1>
+                <div *ngFor="let item of results.newEntries" class="mb-5 h-[280px]">
+                    <div>
+                        <input type="text" class="form-input" value="{{ item.id }}" />
+                    </div>
+                    <div>
+                        <input type="text" class="form-input" value="{{ item.time }}" />
+                    </div>
+                    <div>
+                        <textarea class="form-input h-28">{{ item.text }}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

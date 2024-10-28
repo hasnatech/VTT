@@ -1,0 +1,25 @@
+<header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="flex items-center justify-between px-6 py-4">
+        <h1 class="text-xl font-semibold">VTT File Editor</h1>
+        <div class="flex gap-3 notranslate">
+            <input id="file" type="file" (change)="onFileChange($event)" />
+            <button class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700" (click)="Save();">
+                Save
+            </button>
+        </div>
+    </div>
+</header>
+
+<div>
+    <div>
+        <div *ngIf="results">
+            <div class="flex-1 " id="result">
+                <div *ngFor="let item of results" class="mb-5   ">
+                    <div class="notranslate">{{ item.id }}</div>
+                    <div class="notranslate">{{ item.time }}</div>
+                    <div class="">{{ item.text }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
